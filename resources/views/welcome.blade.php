@@ -83,8 +83,8 @@
                 </div>
                 <a href="https://broker.netid.de/authorize?
                         response_type=code&
-                        client_id=[clientID]&
-                        redirect_uri=[redirect_uri]&
+                        client_id=dcb4a1b4-0e9e-42a0-b282-7c160dfe8f43&
+                        redirect_uri=https://netid.design-it.de/callback&
                         scope=openid&
                         claims={
                             'userinfo':{
