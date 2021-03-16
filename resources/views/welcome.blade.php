@@ -81,17 +81,7 @@
                 <div class="title m-b-md">
                     NETID - TEST
                 </div>
-                <a href="https://broker.netid.de/authorize?response_type=code&client_id=dcb4a1b4-0e9e-42a0-b282-7c160dfe8f43&redirect_uri=https://netid.design-it.de/callback&
-                        scope=openid&
-                        claims={
-                            'userinfo':{
-                                'birthdate':{'essential':true},
-                                'gender':{'essential':true},
-                                'given_name':{'essential':true},
-                                'family_name':{'essential':true}
-                            }
-                        }"
-                >
+                <a href="https://broker.netid.de/authorize?response_type=code&client_id=dcb4a1b4-0e9e-42a0-b282-7c160dfe8f43&redirect_uri=https://netid.design-it.de/callback&scope=openid&claims={'userinfo':{'birthdate':{'essential':true},'gender':{'essential':true},'given_name':{'essential':true},'family_name':{'essential':true}}}">
                     log in with netid
                 </a>
             </div>
