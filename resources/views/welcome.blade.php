@@ -81,6 +81,22 @@
                 <div class="title m-b-md">
                     NETID - TEST
                 </div>
+                <a href="https://broker.netid.de/authorize?
+                        response_type=code&
+                        client_id=[clientID]&
+                        redirect_uri=[redirect_uri]&
+                        scope=openid&
+                        claims={
+                            'userinfo':{
+                                'birthdate':{'essential':true},
+                                'gender':{'essential':true},
+                                'given_name':{'essential':true},
+                                'family_name':{'essential':true}
+                            }
+                        }"
+                >
+                    log in with netid
+                </a>
             </div>
         </div>
     </body>
