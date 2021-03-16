@@ -14,7 +14,10 @@ require('./bootstrap');
  */
 
 Vue.component('example', require('./components/Example.vue'));
+import axios from 'axios';
 
-const app = new Vue({
-    el: '#app'
-});
+window.onload = function () {
+    const app = new Vue({
+        el: '#app'
+    });
+}

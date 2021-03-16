@@ -80,9 +80,10 @@
 
             <div id="app" class="content">
                 <div class="title m-b-md">
-                    NETID - TEST
+                    CALLBACK VIEW
                 </div>
-                <example></example>
+                <h1>{{ app('request')->input('error') }}</h1>
+                <h2>{{ app('request')->input('error_description') }}</h2>
             </div>
         </div>
     </body>
