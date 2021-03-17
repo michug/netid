@@ -23,7 +23,7 @@ class TestController extends Controller
             $sub = $oidc->requestUserInfo('sub');
             $iss = $oidc->requestUserInfo('iss');
 
-            foreach ($oidc->verifiedClaims as $key => $value) {
+            foreach ($oidc->getVerifiedClaims() as $key => $value) {
                 \Log::info($key . ' ' . $value);
             }
 
