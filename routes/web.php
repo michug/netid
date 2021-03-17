@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/callback', function () {
+Route::get('callback', function () {
     return view('callback_view');
 });
+
+Route::get('authenticate', 'TestController@authenticate');
