@@ -350,7 +350,7 @@ class OpenIDConnectClient
 
                 // Save the verified claims
                 $this->verifiedClaims = $claims;
-                \Log::info('We have verified claims!: ' . $this->verifiedClaims);
+                // \Log::info('We have verified claims!: ' . $this->verifiedClaims);
 
                 // Save the refresh token, if we got one
                 if (isset($token_json->refresh_token)) {
@@ -362,7 +362,7 @@ class OpenIDConnectClient
 
             }
 
-            \Log::info('finito ');
+            // \Log::info('finito ');
             throw new OpenIDConnectClientException ('Unable to verify JWT claims');
         }
 
