@@ -20,6 +20,7 @@ class TestController extends Controller
 
             $oidc->authenticate();
             $pepe = $oidc->requestUserInfo('sub');
+            \Log::info('$pepe');
             \Log::info($pepe);
 
         } catch (\Exception $ex) {
