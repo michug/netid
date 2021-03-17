@@ -21,7 +21,9 @@ class TestController extends Controller
             $oidc->authenticate();
             $name = $oidc->requestUserInfo('given_name');
             $sub = $oidc->requestUserInfo('sub');
+            $iss = $oidc->requestUserInfo('iss');
 
+            \Log::info('iss ' . $iss);
             \Log::info('sub ' . $sub);
             \Log::info('name ' . $name);
 
