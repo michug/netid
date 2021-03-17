@@ -28,7 +28,7 @@ class TestController extends Controller
             \Log::info('name ' . $name);
 
         } catch (\Exception $ex) {
-            Log::error($ex);
+            \Log::error($ex);
         }
     }
 }
