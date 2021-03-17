@@ -19,10 +19,11 @@ class TestController extends Controller
             $oidc = new \Jumbojett\OpenIDConnectClient($issuer, $cid, $secret);
 
             $oidc->authenticate();
-            $pepe = $oidc->requestUserInfo('given_name');
-            // $pepe = $oidc->requestUserInfo('sub');
-            \Log::info('$pepe');
-            \Log::info($pepe);
+            $name = $oidc->requestUserInfo('given_name');
+            $sub = $oidc->requestUserInfo('sub');
+
+            \Log::info('sub ' . $sub);
+            \Log::info('name ' . $name);
 
         } catch (\Exception $ex) {
             Log::error($ex);
