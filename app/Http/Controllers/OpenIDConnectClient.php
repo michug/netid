@@ -362,6 +362,7 @@ class OpenIDConnectClient
 
             }
 
+            \Log::info('finito ');
             throw new OpenIDConnectClientException ('Unable to verify JWT claims');
         }
 
