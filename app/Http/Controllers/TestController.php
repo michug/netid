@@ -72,9 +72,10 @@ class TestController extends Controller
 
     private function printScopes($oidc)
     {
+        \Log::info('-- SCOPES -- ');
         $scopes = $oidc->getScopes();
         foreach ($scopes as $scope) {
-            \Log::info('scope: ' . $scope);
+            \Log::info('    scope: ' . $scope);
         }
     }
 }
