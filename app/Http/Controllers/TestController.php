@@ -23,6 +23,7 @@ class TestController extends Controller
 
             // default scope is "openid"
             $oidc->addScope(['openid', 'profile']);
+            $oidc->setAllowImplicitFlow(true);
 
             $this->printScopes($oidc); // DEBUG
 
