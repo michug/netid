@@ -23,18 +23,15 @@ class TestController extends Controller
 
             // default scope is "openid"
             $oidc->addScope(['profile']);
-            $oidc->addAuthParam(array('claims'=>'{"userinfo":{"birthdate":{"essential":true},"gender":{"essential":true},"given_name":{"essential":true},"family_name":{"essential":true}}}'));
+            $oidc->addAuthParam(array('claims'=>'{"userinfo":{"email":{"essential":true},"birthdate":{"essential":true},"gender":{"essential":true},"given_name":{"essential":true},"family_name":{"essential":true}}}'));
 
             $this->printScopes($oidc); // DEBUG
 
             $oidc->authenticate();
 
             \Log::info('Requesting family_name to userInfo endpoint ...');
-            $name = $oidc->requestUserInfo('family_name');
-
-            \Log::info('Requesting sub to userInfo endpoint ...');
-            $sub = $oidc->requestUserInfo('profile');
-            \Log::info('    requested UserInfo sub: ' . $sub);
+            $family_name = $oidc->requestUserInfo('family_name');
+            \Log::info('USER SURNAME IS '. $family_name);
 
             // $customer = $this->getCustomer($email);
             // login $customer and redirect apropiatelly
