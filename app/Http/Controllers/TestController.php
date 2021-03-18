@@ -77,5 +77,6 @@ class TestController extends Controller
         foreach ($scopes as $scope) {
             \Log::info('    scope: ' . $scope);
         }
+        \Log::info(' ');
     }
 }
