@@ -13,7 +13,7 @@ class TestController extends Controller
 {
     public function authenticate(Request $request)
     {
-        \Log::info($request);
+        /*\Log::info($request);*/
 
         try {
             $issuer = 'https://broker.netid.de';
