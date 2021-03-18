@@ -37,7 +37,7 @@ class TestController extends Controller
 
 
             $sub = $oidc->requestUserInfo('sub');
-            \Log::info('requested UserInfo sub: ' . $value);
+            \Log::info('requested UserInfo sub: ' . $sub);
 
             $this->printVerifiedClaims($oidc);
 
