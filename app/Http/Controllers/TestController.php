@@ -33,7 +33,7 @@ class TestController extends Controller
 
             \Log::info('Requesting sub to userInfo endpoint ...');
             $sub = $oidc->requestUserInfo('sub');
-            \Log::info('requested UserInfo sub: ' . $sub);
+            \Log::info('    requested UserInfo sub: ' . $sub);
 
             // $customer = $this->getCustomer($email);
             // login $customer and redirect apropiatelly
