@@ -31,16 +31,14 @@ class TestController extends Controller
             \Log::info('Requesting family_name to userInfo endpoint ...');
             $name = $oidc->requestUserInfo('family_name');
 
-            \Log::info('Requesting email to userInfo endpoint ...');
-            $email = $oidc->requestUserInfo('email');
+            \Log::info('Requesting sub to userInfo endpoint ...');
+            $sub = $oidc->requestUserInfo('sub');
+            \Log::info('requested UserInfo sub: ' . $sub);
 
             // $customer = $this->getCustomer($email);
             // login $customer and redirect apropiatelly
 
 
-            \Log::info('Requesting sub to userInfo endpoint ...');
-            $sub = $oidc->requestUserInfo('sub');
-            \Log::info('requested UserInfo sub: ' . $sub);
 
             $this->printVerifiedClaims($oidc);
 
