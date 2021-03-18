@@ -25,16 +25,11 @@ class TestController extends Controller
             $oidc->addScope(['profile']);
             $oidc->addAuthParam(array('claims'=>'{"userinfo":{"email":{"essential":true},"address":{"essential":true},"birthdate":{"essential":true},"phone_number":{"essential":true},"given_name":{"essential":true},"family_name":{"essential":true}}}'));
 
-            $this->printScopes($oidc); // DEBUG
-
             $oidc->authenticate();
 
             $userInfo = $oidc->requestUserInfo();
-            foreach($userInfo as $key => $value) {
-                \Log::info($key . ' ' . $value);
-            }
 
-            // $customer = $this->getCustomer($email);
+            $customer = $this->getCustomer($userInfo);
             // login $customer and redirect apropiatelly
 
 
@@ -47,10 +42,10 @@ class TestController extends Controller
     }
 
 
-    private function getCustomer($email)
+    private function getCustomer($userInfo)
     {
         // maybe we could use the netid client_id which relates user, netid and asuro-api
-        $customer = Customer::findOrFail('email', $email)->first();
+        $customer = Customer::findOrFail('email', $userInfo['email'])->first();
 
         if (!$customer) {
             // $customer = register new customer
