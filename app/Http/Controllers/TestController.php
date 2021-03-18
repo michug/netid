@@ -22,7 +22,8 @@ class TestController extends Controller
             $oidc = new OpenIDConnectClient($issuer, $cid, $secret);
 
             // default scope is "openid"
-            // $oidc->addScope(['openid', 'profile']);
+            $oidc->addScope('openid');
+            $oidc->addScope('profile');
 
             // $oidc->setAllowImplicitFlow(true);
             // $oidc->addAuthParam(['response_mode' => 'form_post']);
