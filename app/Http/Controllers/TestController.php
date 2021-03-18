@@ -22,7 +22,7 @@ class TestController extends Controller
             $oidc = new OpenIDConnectClient($issuer, $cid, $secret);
 
             // default scope is "openid"
-            $oidc->addScope('openid profile email given_name');
+            $oidc->addScope('openid profile email given_name family_name');
 
             $this->printScopes($oidc); // DEBUG
 
