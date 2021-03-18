@@ -29,9 +29,10 @@ class TestController extends Controller
 
             $oidc->authenticate();
 
-            \Log::info('Requesting family_name to userInfo endpoint ...');
-            $family_name = $oidc->requestUserInfo('family_name');
-            \Log::info('USER SURNAME IS '. $family_name);
+            $userInfo = $oidc->requestUserInfo();
+            foreach($userInfo as $key => $value) {
+                \Log::info('USER SURNAME IS '. $family_name);
+            }
 
             // $customer = $this->getCustomer($email);
             // login $customer and redirect apropiatelly
