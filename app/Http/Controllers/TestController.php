@@ -23,7 +23,7 @@ class TestController extends Controller
 
             // default scope is "openid"
             $oidc->addScope(['profile']);
-            $oidc->addAuthParam(array('login_hint'=>'diego@design-it.de'));
+            $oidc->addAuthParam(array('login_hint'=>''));
 
             // $oidc->setAllowImplicitFlow(true);
             // $oidc->addAuthParam(['response_mode' => 'form_post']);
