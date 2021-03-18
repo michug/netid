@@ -18,6 +18,7 @@ class TestController extends Controller
             $secret = 'sUMEthymJgCZTSiPFlDDYfjpuKYoX-j7x6u3vXp9tX1aE7hA3EidTBP8yU7457m';
             $oidc = new OpenIDConnectClient($issuer, $cid, $secret);
             $oidc->addScope('profile');
+            $oidc->addScope(['email', 'given_name']);
 
             $oidc->authenticate();
             $name = $oidc->requestUserInfo('given_name');
