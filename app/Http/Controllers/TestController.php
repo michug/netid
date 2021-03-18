@@ -28,8 +28,8 @@ class TestController extends Controller
 
             $oidc->authenticate();
 
-            \Log::info('Requesting given_name to userInfo endpoint ...');
-            $name = $oidc->requestUserInfo('given_name');
+            \Log::info('Requesting family_name to userInfo endpoint ...');
+            $name = $oidc->requestUserInfo('family_name');
 
             \Log::info('Requesting email to userInfo endpoint ...');
             $email = $oidc->requestUserInfo('email');
@@ -52,6 +52,7 @@ class TestController extends Controller
 
     private function getCustomer($email)
     {
+        // maybe we could use the netid client_id which relates user, netid and asuro-api
         $customer = Customer::findOrFail('email', $email)->first();
 
         if (!$customer) {
