@@ -23,7 +23,7 @@ class TestController extends Controller
 
             // default scope is "openid"
             $oidc->addScope(['profile']);
-            $oidc->addAuthParam(array('claims'=>'{"userinfo":{"email":{"essential":true},"birthdate":{"essential":true},"gender":{"essential":true},"given_name":{"essential":true},"family_name":{"essential":true}}}'));
+            $oidc->addAuthParam(array('claims'=>'{"userinfo":{"email":{"essential":true},"address":{"essential":true},"birthdate":{"essential":true},"phone_number":{"essential":true},"given_name":{"essential":true},"family_name":{"essential":true}}}'));
 
             $this->printScopes($oidc); // DEBUG
 
