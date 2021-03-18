@@ -28,14 +28,17 @@ class TestController extends Controller
 
             $oidc->authenticate();
 
+            \Log::info('Requesting given_name to userInfo endpoint ...');
             $name = $oidc->requestUserInfo('given_name');
 
+            \Log::info('Requesting email to userInfo endpoint ...');
             $email = $oidc->requestUserInfo('email');
 
             // $customer = $this->getCustomer($email);
             // login $customer and redirect apropiatelly
 
 
+            \Log::info('Requesting sub to userInfo endpoint ...');
             $sub = $oidc->requestUserInfo('sub');
             \Log::info('requested UserInfo sub: ' . $sub);
 
@@ -60,6 +63,7 @@ class TestController extends Controller
 
     private function printVerifiedClaims($oidc)
     {
+        \Log::info('--- VERIFIED CLAIMS -----');
         foreach ($oidc->getVerifiedClaims() as $key => $value) {
             \Log::info($key . ': ' . $value);
         }
