@@ -63,6 +63,7 @@ class TestController extends Controller
 
     private function printVerifiedClaims($oidc)
     {
+        \Log::info(' ');
         \Log::info('--- VERIFIED CLAIMS -----');
         foreach ($oidc->getVerifiedClaims() as $key => $value) {
             \Log::info($key . ': ' . $value);
