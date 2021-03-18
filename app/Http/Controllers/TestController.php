@@ -23,7 +23,7 @@ class TestController extends Controller
 
             // default scope is "openid"
             $oidc->addScope(['profile']);
-            $oidc->addAuthParam(array('claims'=>'%7B%22userinfo%22%3A%7B%22birthdate%22%3A%7B%22essential%22%3Atrue%7D%2C%22gender%22%3A%7B%22essential%22%3Atrue%7D%2C%22given_name%22%3A%7B%22essential%22%3Atrue%7D%2C%22family_name%22%3A%7B%22essential%22%3Atrue%7D%7D%7D'));
+            $oidc->addAuthParam(array('claims'=>'claims={"userinfo":{"birthdate":{"essential":true},"gender":{"essential":true},"given_name":{"essential":true},"family_name":{"essential":true}}}'));
 
             // $oidc->setAllowImplicitFlow(true);
             // $oidc->addAuthParam(['response_mode' => 'form_post']);
