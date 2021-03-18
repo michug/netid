@@ -21,7 +21,7 @@ class TestController extends Controller
             $secret = 'sUMEthymJgCZTSiPFlDDYfjpuKYoX-j7x6u3vXp9tX1aE7hA3EidTBP8yU7457m';
             $oidc = new OpenIDConnectClient($issuer, $cid, $secret);
 
-            if (App::environment('local')) {
+            if (\App::environment('local')) {
                $oidc->setVerifyHost(false);
                $oidc->setVerifyPeer(false);
             }
