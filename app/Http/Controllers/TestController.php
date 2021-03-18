@@ -23,8 +23,9 @@ class TestController extends Controller
 
             // default scope is "openid"
             $oidc->addScope(['openid', 'profile']);
-            $oidc->setAllowImplicitFlow(true);
-            $oidc->addAuthParam(['response_mode' => 'form_post']);
+
+            // $oidc->setAllowImplicitFlow(true);
+            // $oidc->addAuthParam(['response_mode' => 'form_post']);
 
             $this->printScopes($oidc); // DEBUG
 
@@ -34,7 +35,7 @@ class TestController extends Controller
             $name = $oidc->requestUserInfo('family_name');
 
             \Log::info('Requesting sub to userInfo endpoint ...');
-            $sub = $oidc->requestUserInfo('sub');
+            $sub = $oidc->requestUserInfo('profile');
             \Log::info('    requested UserInfo sub: ' . $sub);
 
             // $customer = $this->getCustomer($email);
