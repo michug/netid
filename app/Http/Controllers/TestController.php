@@ -31,7 +31,7 @@ class TestController extends Controller
 
             $userInfo = $oidc->requestUserInfo();
             foreach($userInfo as $key => $value) {
-                \Log::info('USER SURNAME IS '. $family_name);
+                \Log::info($key . ' ' . $value);
             }
 
             // $customer = $this->getCustomer($email);
