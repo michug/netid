@@ -6,7 +6,7 @@
                     <div class="panel-heading">Login component</div>
                     <br><br>
                     <div class="panel-body">
-                        <a href="https://broker.netid.de/authorize?response_type=code&client_id=dcb4a1b4-0e9e-42a0-b282-7c160dfe8f43&redirect_uri=https://netid.design-it.de/authorize&scope=openid&claims=%7B%22userinfo%22%3A%7B%22birthdate%22%3A%7B%22essential%22%3Atrue%7D%2C%22gender%22%3A%7B%22essential%22%3Atrue%7D%2C%22given_name%22%3A%7B%22essential%22%3Atrue%7D%2C%22family_name%22%3A%7B%22essential%22%3Atrue%7D%7D%7D"
+                        <a href="https://broker.netid.de/authorize?response_type=code&client_id=dcb4a1b4-0e9e-42a0-b282-7c160dfe8f43&redirect_uri=https://netid.design-it.systems/authorize&scope=openid&claims=%7B%22userinfo%22%3A%7B%22birthdate%22%3A%7B%22essential%22%3Atrue%7D%2C%22gender%22%3A%7B%22essential%22%3Atrue%7D%2C%22given_name%22%3A%7B%22essential%22%3Atrue%7D%2C%22family_name%22%3A%7B%22essential%22%3Atrue%7D%7D%7D"
                         >
                             log in with netid
                         </a>
