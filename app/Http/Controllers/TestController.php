@@ -20,16 +20,19 @@ class TestController extends Controller
             $oidc->addScope('profile');
             $oidc->addScope(['email', 'given_name']);
 
+            $scopes = $oidc->getScopes();
+            foreach ($scopes as $scope) {
+                \Log::info('scope: ' . $scope);
+            }
+
             $oidc->authenticate();
             $name = $oidc->requestUserInfo('given_name');
             $sub = $oidc->requestUserInfo('sub');
-            $iss = $oidc->requestUserInfo('iss');
 
             foreach ($oidc->getVerifiedClaims() as $key => $value) {
                 \Log::info($key . ' ' . $value);
             }
 
-            \Log::info('iss ' . $iss);
             \Log::info('sub ' . $sub);
             \Log::info('name ' . $name);
 
