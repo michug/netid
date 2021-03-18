@@ -350,7 +350,7 @@ class OpenIDConnectClient
 
                 // Save the verified claims
                 $this->verifiedClaims = $claims;
-                // \Log::info('We have verified claims!: ' . $this->verifiedClaims);
+                \Log::info('We have verified claims!: ' . $this->verifiedClaims);
 
                 // Save the refresh token, if we got one
                 if (isset($token_json->refresh_token)) {
@@ -362,7 +362,6 @@ class OpenIDConnectClient
 
             }
 
-            \Log::info('finito ');
             throw new OpenIDConnectClientException ('Unable to verify JWT claims');
         }
 
@@ -941,7 +940,9 @@ class OpenIDConnectClient
         if (!\is_string($jwt)) {
             throw new OpenIDConnectClientException('Error token is not a string');
         }
+
         $parts = explode('.', $jwt);
+
         if (!isset($parts[0])) {
             throw new OpenIDConnectClientException('Error missing part 0 in token');
         }
@@ -978,6 +979,9 @@ class OpenIDConnectClient
             case 'HS384':
                 $hashtype = 'SHA' . substr($header->alg, 2);
                 $verified = $this->verifyHMACJWTsignature($hashtype, $this->getClientSecret(), $payload, $signature);
+                break;
+            case 'none' :
+                $verified=true;
                 break;
             default:
                 throw new OpenIDConnectClientException('No support for signature type: ' . $header->alg);
@@ -1200,7 +1204,7 @@ class OpenIDConnectClient
 
         // Download the given URL, and return output
         $output = curl_exec($ch);
-
+SDDFSF
         // HTTP Response code from server may be required from subclass
         $info = curl_getinfo($ch);
         $this->responseCode = $info['http_code'];
