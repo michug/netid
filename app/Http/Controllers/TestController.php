@@ -24,6 +24,7 @@ class TestController extends Controller
             // default scope is "openid"
             $oidc->addScope(['openid', 'profile']);
             $oidc->setAllowImplicitFlow(true);
+            $oidc->addAuthParam(['response_mode' => 'form_post']);
 
             $this->printScopes($oidc); // DEBUG
 
